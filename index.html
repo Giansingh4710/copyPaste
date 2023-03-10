@@ -9,15 +9,14 @@
 
   <body>
     <form method="post" action="http://45.76.2.28/copyPaste/saveText.php">
-      <label for="theText">></label>
-      <textarea id="theText"></textarea>
+      <textarea id="theText" name="theText"></textarea>
       <br/>
       <button>Press to Save file</button>
     </form>
   </body>
 
   <script>
-    fetch('http://45.76.2.28/trackIndex/getData.php')
+    fetch('http://45.76.2.28/copyPaste/getText.php')
       .then((res) => {
         if (!res.ok) throw new Error('Something went wrong!')
         return res.text();
@@ -30,3 +29,4 @@
       })
   </script>
 </html>
+
