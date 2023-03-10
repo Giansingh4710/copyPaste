@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy Paste</title>
+  </head>
+
+  <body>
+    <form method="post" action="http://45.76.2.28/copyPaste/saveText.php">
+      <label for="theText">></label>
+      <textarea id="theText"></textarea>
+      <br/>
+      <button>Press to Save file</button>
+    </form>
+  </body>
+
+  <script>
+    fetch('http://45.76.2.28/trackIndex/getData.php')
+      .then((res) => {
+        if (!res.ok) throw new Error('Something went wrong!')
+        return res.text();
+      })
+      .then((data) => {
+        document.getElementsByTagName("textarea")[0].value = data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  </script>
+</html>
