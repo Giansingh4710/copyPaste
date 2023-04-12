@@ -22,10 +22,23 @@
         return res.text();
       })
       .then((data) => {
-        document.getElementsByTagName("textarea")[0].value = data
+        document.getElementsByTagName("textarea")[0].value = data;
       })
       .catch((err) => {
         console.log(err)
+        
+        // this won't work over https becuase we are reading a file 
+        // from http. So github pages won't work. so this is to redirect
+
+        //const atag = document.createElement('a');
+        //const br = document.createElement('br');
+        //atag.href = "./index.html";
+        //atag.innerText = "This Site won't work. Go to this instead";
+        //document.getElementsByTagName("body")[0].appendChild(br);
+        //document.getElementsByTagName("body")[0].appendChild(atag);
+
+        window.location.href = "./index.html";
+
       })
   </script>
 </html>
