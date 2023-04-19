@@ -9,7 +9,7 @@
 
   <body>
     <form method="post" action="http://45.76.2.28/copyPaste/saveText.php">
-      <textarea id="theText" name="theText"></textarea>
+      <textarea rows="15" cols="30"  id="theText" name="theText"></textarea>
       <br/>
       <button>Press to Save file</button>
     </form>
@@ -34,7 +34,7 @@
         const atag = document.createElement('a');
         const br = document.createElement('br');
         atag.href = "http://45.76.2.28/copyPaste/";
-        atag.innerText = "This Site won't work. Go to this instead";
+        atag.innerText = "This Site won't work Properly. Go to this instead";
         document.getElementsByTagName("body")[0].appendChild(br);
         document.getElementsByTagName("body")[0].appendChild(atag);
 
