@@ -10,23 +10,29 @@
   <body>
     <form method="post" action="http://45.76.2.28/copyPaste/saveText.php">
       <textarea id="theText" name="theText"></textarea>
-      <br/>
+      <br />
       <button>Press to Save file</button>
     </form>
+    <button id="copyBtn" onclick="copy()">Copy Text</button>
   </body>
 
   <script>
+    function copy() {
+      const text = document.getElementsByTagName('textarea')[0].value
+      navigator.clipboard.writeText(text)
+      alert("Copied to clipboard!!")
+    }
+
     fetch('http://45.76.2.28/copyPaste/getText.php')
       .then((res) => {
         if (!res.ok) throw new Error('Something went wrong!')
-        return res.text();
+        return res.text()
       })
       .then((data) => {
-        document.getElementsByTagName("textarea")[0].value = data
+        document.getElementsByTagName('textarea')[0].value = data
       })
       .catch((err) => {
         console.log(err)
       })
   </script>
 </html>
-
