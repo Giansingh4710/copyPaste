@@ -13,34 +13,43 @@
       <br/>
       <button>Press to Save file</button>
     </form>
+    <button id="copyBtn" onclick="copy()">Copy Text</button>
   </body>
 
   <script>
-    fetch('http://45.76.2.28/copyPaste/getText.php')
-      .then((res) => {
-        if (!res.ok) throw new Error('Something went wrong!')
-        return res.text();
-      })
-      .then((data) => {
-        document.getElementsByTagName("textarea")[0].value = data;
-      })
-      .catch((err) => {
-        console.log(err);
-        console.log("Vaheguru");
-        
-        // this won't work over https becuase we are reading a file 
-        // from http. So github pages won't work. so this is to redirect
+    function copy() {
+      const copyTextArea = document.getElementsByTagName('textarea')[0]
+      copyTextArea.select();
+      copyTextArea.setSelectionRange(0, 99999); // For mobile devices
+      document.execCommand('copy'); // Copy the selected text to the clipboard
+      document.getSelection().removeAllRanges(); // Clear the selection
+      alert("Text Copied")
+    }
 
-        const atag = document.createElement('a');
-        const br = document.createElement('br');
-        atag.href = "http://45.76.2.28/copyPaste/";
-        atag.innerText = "This Site won't work Properly. Go to this instead";
-        document.getElementsByTagName("body")[0].appendChild(br);
-        document.getElementsByTagName("body")[0].appendChild(atag);
+fetch('http://45.76.2.28/copyPaste/getText.php')
+  .then((res) => {
+    if (!res.ok) throw new Error('Something went wrong!')
+    return res.text()
+  })
+  .then((data) => {
+    document.getElementsByTagName("textarea")[0].value = data;
+  })
+  .catch((err) => {
+    console.log(err);
+    console.log("Vaheguru");
 
-        //window.location.href = "http://45.76.2.28/copyPaste/";
+    // this won't work over https becuase we are reading a file 
+    // from http. So github pages won't work. so this is to redirect
 
-      })
+    const atag = document.createElement('a');
+    const br = document.createElement('br');
+    atag.href = "http://45.76.2.28/copyPaste/";
+    atag.innerText = "This Site won't work Properly. Go to this instead";
+    document.getElementsByTagName("body")[0].appendChild(br);
+    document.getElementsByTagName("body")[0].appendChild(atag);
+
+    //window.location.href = "http://45.76.2.28/copyPaste/";
+
+  })
   </script>
 </html>
-
