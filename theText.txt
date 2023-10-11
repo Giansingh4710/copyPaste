@@ -1,12 +1,1 @@
-mv "Sant Giani Gurbachan Singh Ji Podcast ｜ Gurmukh Series [PART 1].mp4" "01) Sant Giani Gurbachan Singh Ji Podcast ｜ Gurmukh Series [PART 1].mp4"
-mv "Sant Giani Gurbachan Singh Ji Podcast ｜ Gurmukh Series [PART 2].mp4" "02) Sant Giani Gurbachan Singh Ji Podcast ｜ Gurmukh Series [PART 2].mp4"
-mv "Sant Baba Isher Singh Ji Rara Sahib Podcast ｜ Gurmukh Series.mp4" "03) Sant Baba Isher Singh Ji Rara Sahib Podcast ｜ Gurmukh Series.mp4"
-mv "Sant Baba Attar Singh Ji Mastuana Sahib Podcast ｜ Gurmukh Series [PART 1].mp4" "04) Sant Baba Attar Singh Ji Mastuana Sahib Podcast ｜ Gurmukh Series [PART 1].mp4"
-mv "Sant Baba Shaam Singh Ji Podcast ｜ Gurmukh Series [PART 1].mp4" "05) Sant Baba Shaam Singh Ji Podcast ｜ Gurmukh Series [PART 1].mp4"
-mv "Sant Baba Attar Singh Ji Mastuana Sahib Podcast ｜ Gurmukh Series [PART 2].mp4" "06) Sant Baba Attar Singh Ji Mastuana Sahib Podcast ｜ Gurmukh Series [PART 2].mp4"
-mv "Bhai Sahib Bhai Randhir Singh Ji Podcast ｜ Gurmukh Series - Part 1.mp4" "07) Bhai Sahib Bhai Randhir Singh Ji Podcast ｜ Gurmukh Series - Part 1.mp4"
-mv "Experiences with Sant Baba Isher Singh Ji - Bhai Inderjit Singh Ji and Sunny Singh ｜ Gurmukh Series.mp4" "08) Experiences with Sant Baba Isher Singh Ji - Bhai Inderjit Singh Ji and Sunny Singh ｜ Gurmukh Series.mp4"
-mv "Sant Giani Sundar Singh Ji Podcast ｜ Gurmukh Series.mp4" "09) Sant Giani Sundar Singh Ji Podcast ｜ Gurmukh Series.mp4"
-mv "Sant Baba Shaam Singh Ji Podcast ｜ Gurmukh Series [PART 2].mp4" "10) Sant Baba Shaam Singh Ji Podcast ｜ Gurmukh Series [PART 2].mp4"
-mv "[ENGLISH SUBTITLES] Sant Gurbachan Singh Ji's Grandson ｜ Conversation With Baba Avtar Singh Ji.mp4" "11) [ENGLISH SUBTITLES] Sant Gurbachan Singh Ji's Grandson ｜ Conversation With Baba Avtar Singh Ji.mp4"
-mv "Sant Baba Nand Singh Ji Podcast ｜ Gurmukh Series [PART 1].mp4" "12) Sant Baba Nand Singh Ji Podcast ｜ Gurmukh Series [PART 1].mp4"
+https://drive.google.com/file/d/1wI2m_Ih3zwHog15QE515Cyg5MWDh1kwe/view?usp=sharing
