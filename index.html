@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,47 +9,57 @@
 
   <body>
     <form method="post" action="http://45.76.2.28/copyPaste/saveText.php">
-      <textarea rows="15" cols="30"  id="theText" name="theText"></textarea>
-      <br/>
-      <button>Press to Save file</button>
+      <textarea rows="15" cols="30" id="theText" name="theText"></textarea>
+      <br />
+      <button>Submit (Save file)</button>
     </form>
     <button id="copyBtn" onclick="copy()">Copy Text</button>
+    <button id="copyBtn" onclick="paste()">Paste Text</button>
   </body>
 
   <script>
     function copy() {
       const copyTextArea = document.getElementsByTagName('textarea')[0]
-      copyTextArea.select();
-      copyTextArea.setSelectionRange(0, 99999); // For mobile devices
-      document.execCommand('copy'); // Copy the selected text to the clipboard
-      document.getSelection().removeAllRanges(); // Clear the selection
-      alert("Text Copied")
+      copyTextArea.select()
+      copyTextArea.setSelectionRange(0, 99999) // For mobile devices
+      document.execCommand('copy') // Copy the selected text to the clipboard
+      document.getSelection().removeAllRanges() // Clear the selection
+      alert('Text Copied')
     }
 
-  fetch('http://45.76.2.28/copyPaste/getText.php')
-  .then((res) => {
-    if (!res.ok) throw new Error('Something went wrong!')
-    return res.text()
-  })
-  .then((data) => {
-    document.getElementsByTagName("textarea")[0].value = data;
-  })
-  .catch((err) => {
-    console.log(err);
-    console.log("Vaheguru");
+    async function paste() {
+      const pasteTextArea = document.getElementsByTagName('textarea')[0]
+      try {
+        const clipboardText = await navigator.clipboard.readText()
+        pasteTextArea.value = clipboardText
+      } catch (err) {
+        alert(err)
+      }
+    }
 
-    // this won't work over https becuase we are reading a file 
-    // from http. So github pages won't work. so this is to redirect
+    fetch('http://45.76.2.28/copyPaste/getText.php')
+      .then((res) => {
+        if (!res.ok) throw new Error('Something went wrong!')
+        return res.text()
+      })
+      .then((data) => {
+        document.getElementsByTagName('textarea')[0].value = data
+      })
+      .catch((err) => {
+        console.log(err)
+        console.log('Vaheguru')
 
-    const atag = document.createElement('a');
-    const br = document.createElement('br');
-    atag.href = "http://45.76.2.28/copyPaste/";
-    atag.innerText = "This Site won't work Properly. Go to this instead";
-    document.getElementsByTagName("body")[0].appendChild(br);
-    document.getElementsByTagName("body")[0].appendChild(atag);
+        // this won't work over https because we are reading a file
+        // from http. So github pages won't work. so this is to redirect
 
-    //window.location.href = "http://45.76.2.28/copyPaste/";
+        const atag = document.createElement('a')
+        const br = document.createElement('br')
+        atag.href = 'http://45.76.2.28/copyPaste/'
+        atag.innerText = "This Site won't work Properly. Go to this instead"
+        document.getElementsByTagName('body')[0].appendChild(br)
+        document.getElementsByTagName('body')[0].appendChild(atag)
 
-  })
+        //window.location.href = "http://45.76.2.28/copyPaste/";
+      })
   </script>
 </html>
