@@ -14,7 +14,8 @@
       <button>Submit (Save file)</button>
     </form>
     <button id="copyBtn" onclick="copy()">Copy Text</button>
-    <button id="copyBtn" onclick="paste()">Paste Text</button>
+    <!-- <button id="pasteBtn" onclick="paste()">Paste Text</button> -->
+    <button id="clear" onclick="clearText()">Clear Text</button>
   </body>
 
   <script>
@@ -25,6 +26,12 @@
       document.execCommand('copy') // Copy the selected text to the clipboard
       document.getSelection().removeAllRanges() // Clear the selection
       alert('Text Copied')
+    }
+
+    function clearText() {
+      const copyTextArea = document.getElementsByTagName('textarea')[0]
+      console.log(copyTextArea)
+      copyTextArea.value = ""
     }
 
     async function paste() {
